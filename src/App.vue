@@ -2,7 +2,7 @@
   <h1>nen jina</h1>
   <button @click="start" :disabled="isPlaying">play</button>
   <Block v-if="isPlaying" :delay="delay" @end="okayy"/>
-  <Results v-show="!isPlaying" :resu="score"/>
+  <Results v-show="shResult" :resu="score"/>
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default {
       isPlaying: false,
       delay: null,
       score: null,
+      shResult: false,
     }
   },
   methods: {
@@ -31,6 +32,7 @@ export default {
     okayy(eyy){
       this.score = eyy
       this.isPlaying = false
+      this.shResult = true
     }
   }
 }
